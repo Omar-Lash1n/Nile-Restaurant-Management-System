@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="226" pageHeight="425" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3c6b168-c1bf-4c45-9eb5-09f38ed27446">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="82"/>
+	<property name="ireport.y" value="292"/>
+	<parameter name="getReciept" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     customerr_A.`id` AS customerr_id,
+     customerr_A.`customerid` AS customerr_customerid,
+     customerr_A.`productid` AS customerr_productid,
+     customerr_A.`product_name` AS customerr_product_name,
+     customerr_A.`type` AS customerr_type,
+     customerr_A.`quantity` AS customerr_quantity,
+     customerr_A.`price` AS customerr_price,
+     customerr_A.`image` AS customerr_image,
+     customerr_A.`date` AS customerr_date,
+     customerr_A.`emplyee_name` AS customerr_emplyee_name,
+     reciept.`id` AS reciept_id,
+     reciept.`customer_id` AS reciept_customer_id,
+     reciept.`total_price` AS reciept_total_price,
+     reciept.`date` AS reciept_date,
+     reciept.`employee_name` AS reciept_employee_name
+FROM
+     `customerr` customerr_A INNER JOIN `reciept` reciept ON customerr_A.`customerid` = reciept.`customer_id`,
+     `customerr` customerr
+WHERE
+     reciept.`customer_id` = $P{getReciept}]]>
+	</queryString>
+	<field name="customerr_id" class="java.lang.Integer"/>
+	<field name="customerr_customerid" class="java.lang.Integer"/>
+	<field name="customerr_productid" class="java.lang.String"/>
+	<field name="customerr_product_name" class="java.lang.String"/>
+	<field name="customerr_type" class="java.lang.String"/>
+	<field name="customerr_quantity" class="java.lang.Integer"/>
+	<field name="customerr_price" class="java.lang.Float"/>
+	<field name="customerr_image" class="java.lang.String"/>
+	<field name="customerr_date" class="java.sql.Date"/>
+	<field name="customerr_emplyee_name" class="java.lang.String"/>
+	<field name="reciept_id" class="java.lang.Integer"/>
+	<field name="reciept_customer_id" class="java.lang.Integer"/>
+	<field name="reciept_total_price" class="java.lang.Float"/>
+	<field name="reciept_date" class="java.sql.Date"/>
+	<field name="reciept_employee_name" class="java.lang.String"/>
+	<variable name="customerr_customerid_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{customerr_customerid}]]></variableExpression>
+	</variable>
+	<variable name="customerr_id_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{customerr_id}]]></variableExpression>
+	</variable>
+	<variable name="customerr_customerid_2" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[$F{customerr_customerid}]]></variableExpression>
+	</variable>
+	<variable name="customerr_product_name_1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{customerr_product_name}]]></variableExpression>
+	</variable>
+	<group name="total">
+		<groupExpression><![CDATA[$F{customerr_id}]]></groupExpression>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="32" width="133" height="20" uuid="85700e10-d243-4a6a-991d-7b58e3beb148"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[مطعـــــــــــــــــم النـيـــــــــــــــل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="0" width="55" height="17" uuid="afb9b1ba-1314-454d-91e0-4a48cb53560a"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[العميل رقم: ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="17" width="186" height="1" uuid="9506e98a-c844-4b51-bedd-85ab69990adf"/>
+			</line>
+			<line>
+				<reportElement x="0" y="77" width="186" height="1" uuid="2d8b91f2-330c-4849-81d9-8c4ec1ee31e2"/>
+			</line>
+			<textField evaluationTime="Report">
+				<reportElement x="146" y="1" width="22" height="20" uuid="b38e04b7-f95a-4142-9bfb-fa71196132bf"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{customerr_customerid_2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="11" width="186" height="1" uuid="3d7dfb94-a0ba-460a-8748-d668d96f7bec"/>
+			</line>
+			<line>
+				<reportElement x="1" y="26" width="185" height="1" uuid="a45ecac1-4950-4f94-994c-9eb8adb32376"/>
+			</line>
+			<staticText>
+				<reportElement x="136" y="-1" width="42" height="12" uuid="b9f09be1-3be6-4398-9cc1-a38e11881e58"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[اسم الصنف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="-1" width="23" height="12" uuid="c2326adc-52aa-4d70-9a4f-435cfcdd84df"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[السعر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="-1" width="35" height="12" uuid="9a13b445-8293-4e75-b504-4b5021ac14ae"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[النوع]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="-1" width="22" height="12" uuid="9af861c6-f9f9-416e-b009-f4807c147e2c"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الكمية]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="14" width="52" height="14" uuid="1754f707-c9ff-467b-8d85-c5d9abd5c221"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerr_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="15" width="57" height="20" uuid="881f499a-4efa-4ced-af01-58910cec30c8"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerr_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="15" width="15" height="20" uuid="caf61d22-3469-447f-889b-155cf732fc72"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerr_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="14" width="15" height="20" uuid="e000ffff-bbe3-4a8d-8ad8-27d29c001892"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerr_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="50" width="185" height="20" uuid="9cf53d66-2de4-45d2-a7a5-79402b46715e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[شكرا لزيارتكم , نتمنى لكم  يوما  سعيدا]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="8" width="55" height="20" uuid="c3a699f7-ea1f-473f-a9fd-42f0cb174860"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[الاجمالي للسعر: ]]></text>
+			</staticText>
+			<textField pattern="yyyy.MMMMM.dd GGG hh:mm aaa">
+				<reportElement x="62" y="68" width="63" height="11" uuid="5e467b7d-a704-404c-aa09-513dcc7bcf6b"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="8" width="18" height="15" uuid="7a0b67de-c005-4637-a33f-907dcdd51fce"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reciept_total_price}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="8" width="0" height="0" uuid="69dc3fa5-4102-4c0e-9225-64e363192fe3"/>
+				<text><![CDATA[reciept_total_price]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

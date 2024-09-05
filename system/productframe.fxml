@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="FrameOfProduct" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="257.0" style="-fx-background-radius: 11Px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.management.system.ProductframeController">
+   <children>
+      <AnchorPane prefHeight="180.0" prefWidth="230.0" style="-fx-background-radius: 11Px; -fx-background-color: white;">
+         <children>
+            <Label fx:id="FoodNameLabell" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="103.0" layoutY="7.0" prefHeight="26.0" prefWidth="133.0" text="Spagetti">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="priceLabel" layoutX="23.0" layoutY="7.0" prefHeight="26.0" prefWidth="121.0" text="0.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="31.0" prefHeight="278.0" prefWidth="257.0">
+               <children>
+                  <ImageView fx:id="ImageOfProduct" fitHeight="200.0" fitWidth="200.0" layoutX="29.0" pickOnBounds="true" preserveRatio="true" />
+                  <Spinner fx:id="spinnerProductFrame" layoutX="21.0" layoutY="192.0" prefHeight="32.0" prefWidth="215.0" />
+                  <Button fx:id="addButtonProductFrame" layoutX="21.0" layoutY="230.0" mnemonicParsing="false" onAction="#addButton" prefHeight="32.0" prefWidth="215.0" style="-fx-background-color: #FD7212;" text="اضافة" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label fx:id="FoodNameLabell1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="114.0" layoutY="253.0" prefHeight="26.0" prefWidth="80.0" text="التنصيف : " visible="false">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="salesoftheproduct" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="36.0" layoutY="253.0" prefHeight="26.0" prefWidth="80.0" text="مبيعا" visible="false">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow>
+         <color>
+            <Color opacity="0.5343511700630188" />
+         </color>
+      </DropShadow>
+   </effect>
+</AnchorPane>

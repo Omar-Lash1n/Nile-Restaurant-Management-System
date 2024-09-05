@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1403.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="restaurant.management.system.CashierfileController">
+   <children>
+      <AnchorPane fx:id="mainFormAnchorPane" prefHeight="709.0" prefWidth="1408.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="262.0" layoutY="14.0" prefHeight="607.0" prefWidth="861.0" style="-fx-background-color: white;" visible="false" />
+            <AnchorPane layoutX="1148.0" prefHeight="709.0" prefWidth="255.0" style="-fx-background-color: linear-gradient(to right, #fc4a1a, #f7b733); -fx-background-radius: 0Px;">
+               <children>
+                  <ImageView fitHeight="727.0" fitWidth="255.0" layoutX="-15.0" layoutY="-2.0">
+                     <image>
+                        <Image url="@../../../image/مرحباً%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="usernameLabbelIndashbiardPage" alignment="CENTER" layoutX="41.0" layoutY="51.0" prefHeight="32.0" prefWidth="145.0" text="Admin" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="dashboardButtonInMenu" layoutX="27.0" layoutY="152.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="181.0" style="-fx-border-color: #E6E6E6; -fx-background-color: white; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="Dashboard" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="availableFoodAnddrinkButtonInMenu" layoutY="174.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="229.0" style="-fx-border-color: none; -fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="الوجبات" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="orderButtonInMenu" layoutY="228.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="229.0" style="-fx-border-color: none; -fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="الطلبات" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuButtonInMenu" layoutY="335.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="229.0" style="-fx-border-color: none; -fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="المنيو" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane layoutX="-3.0" layoutY="663.0" prefHeight="64.0" prefWidth="229.0" style="-fx-background-color: #FD7212; -fx-background-radius: 11;" />
+                  <Button fx:id="logoutButtonInMenu" layoutX="-3.0" layoutY="663.0" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="229.0" style="-fx-border-color: none; -fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="تسجيل خروج" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="22Px" wrappingWidth="20.428571701049805" />
+                     </graphic>
+                  </Button>
+                  <AnchorPane layoutX="20.0" layoutY="29.0" prefHeight="120.0" prefWidth="196.0" style="-fx-background-color: linear-gradient(to right, #fc4a1a, #f7b733); -fx-background-radius: 11Px; -fx-border-color: white; -fx-border-radius: 11;" visible="false">
+                     <children>
+                        <Label layoutX="71.0" layoutY="21.0" text="مرحباً" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.27755725383758545" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <Button fx:id="homeButtonInMenu1" layoutX="-1.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="229.0" style="-fx-border-color: none; -fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="الصفحة الرئيسية" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="CustomerButton" layoutX="28.0" layoutY="325.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="181.0" style="-fx-border-color: #E6E6E6; -fx-background-color: white; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="العملاء" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="tablebutton" layoutY="281.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="229.0" style="-fx-border-color: none; -fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="الطاولات" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exitButtonInMenu" layoutX="-1.0" layoutY="391.0" mnemonicParsing="false" onAction="#exit" prefHeight="44.0" prefWidth="229.0" style="-fx-border-color: none; -fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" text="خروج" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.36259540915489197" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="dashboardFormAnchorPane" layoutX="262.0" layoutY="14.0" prefHeight="607.0" prefWidth="867.0" style="-fx-background-color: #EEEEEE;" visible="false">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.4656488597393036" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="185.0" prefWidth="833.0" style="-fx-background-color: white; -fx-border-color: #E6E6E6; -fx-background-radius: 11Px; -fx-border-radius: 11Px;">
+                     <children>
+                        <ScrollPane layoutX="2.0" layoutY="2.0" prefHeight="201.0" prefWidth="831.0" style="-fx-background-radius: 11Px;" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="177.0" prefWidth="1115.0" style="-fx-background-radius: 11Px;">
+                                 <children>
+                                    <AnchorPane layoutX="20.0" layoutY="12.0" prefHeight="155.0" prefWidth="247.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 11PX;">
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.4656488597393036" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <children>
+                                          <Label fx:id="NumberOfCustomersIndashboardPage" alignment="CENTER_RIGHT" layoutX="126.0" layoutY="14.0" prefHeight="30.0" prefWidth="99.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="34.0" layoutY="115.0" text="Number Of Customers">
+                                             <font>
+                                                <Font name="System Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="289.0" layoutY="14.0" prefHeight="155.0" prefWidth="247.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 11PX;">
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.4656488597393036" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <children>
+                                          <Label fx:id="TodayncomeIindashboardPage" alignment="CENTER_RIGHT" layoutX="128.0" layoutY="14.0" prefHeight="30.0" prefWidth="105.0" text="0.0">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="67.0" layoutY="115.0" text="Today Income">
+                                             <font>
+                                                <Font name="System Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="187.0" layoutY="113.0" text="\$">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="564.0" layoutY="14.0" prefHeight="155.0" prefWidth="247.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 11PX;">
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.4656488597393036" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <children>
+                                          <Label layoutX="71.0" layoutY="115.0" text="Total Income">
+                                             <font>
+                                                <Font name="System Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="TotalIncomeIindashboardPage" alignment="CENTER_RIGHT" layoutX="150.0" layoutY="14.0" prefHeight="30.0" prefWidth="83.0" text="0.0">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="182.0" layoutY="113.0" text="\$">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="839.0" layoutY="14.0" prefHeight="155.0" prefWidth="256.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 11PX;">
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.4656488597393036" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="23.0" layoutY="115.0" text="Number Of Sold Products">
+                                             <font>
+                                                <Font name="System Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="TotalIncomeIindashboardPage1" alignment="CENTER_RIGHT" layoutX="159.0" layoutY="14.0" prefHeight="30.0" prefWidth="83.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.5305343270301819" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="14.0" layoutY="215.0" prefHeight="384.0" prefWidth="833.0" style="-fx-background-color: white; -fx-background-radius: 11PX; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="349.0" prefWidth="370.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;">
+                           <children>
+                              <BarChart fx:id="orderStatisticsChartIndashoardPage" layoutY="-51.0" prefHeight="351.0" prefWidth="502.0" title="Orders Statistics" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="401.0" layoutY="15.0" prefHeight="349.0" prefWidth="408.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;">
+                           <children>
+                              <BarChart fx:id="incomeStatisticsChartIndashoardPage" layoutX="1.0" prefHeight="351.0" prefWidth="408.0" title="Income Statistics" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+                  <Separator layoutX="21.0" layoutY="207.0" prefHeight="6.0" prefWidth="822.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customerTablePage" layoutX="14.0" layoutY="34.0" prefHeight="682.0" prefWidth="1080.0" style="-fx-background-color: lightgray; -fx-background-radius: 11;" visible="false">
+               <children>
+                  <TableView fx:id="tableInCustomerPage" layoutX="14.0" layoutY="49.0" prefHeight="618.0" prefWidth="1055.0">
+                    <columns>
+                      <TableColumn fx:id="customeridColoumnIncustomerPage" prefWidth="134.0" text="Customer id" />
+                      <TableColumn fx:id="totalColoumnIncustomerPage" prefWidth="109.0" text="Total" />
+                        <TableColumn fx:id="dateColoumnIncustomerPage" prefWidth="123.0" text="Date" />
+                        <TableColumn fx:id="cashierColoumnIncustomerPage" prefWidth="108.0" text="Cashier" />
+                        <TableColumn prefWidth="113.0" text="C1" />
+                        <TableColumn prefWidth="145.0" text="C1" />
+                        <TableColumn prefWidth="153.0" text="C1" />
+                        <TableColumn prefWidth="194.0" text="C1" />
+                    </columns>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.4351145029067993" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </TableView>
+                  <Label fx:id="customerManagementlabel" layoutX="450.0" layoutY="9.0" prefHeight="33.0" prefWidth="203.0" text="جدول  العملاء">
+                     <font>
+                        <Font name="29LTBukra-Regular" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="homeAnchorPane22222" layoutX="15.0" layoutY="12.0" prefHeight="718.0" prefWidth="1112.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="654.0" prefWidth="383.0" style="-fx-background-color: white; -fx-background-radius: 11Px;">
+                     <children>
+                        <AnchorPane layoutX="14.0" prefHeight="436.0" prefWidth="350.0" style="-fx-background-color: white; -fx-background-radius: 11Px;">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.5114504098892212" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <children>
+                              <AnchorPane layoutX="13.0" layoutY="122.0" prefHeight="303.0" prefWidth="314.0" style="-fx-background-radius: 11Px7; -fx-background-color: none;">
+                                 <children>
+                                    <Button fx:id="b7" layoutX="16.0" layoutY="21.0" mnemonicParsing="false" onAction="#button7Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="7">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="b8" layoutX="85.0" layoutY="21.0" mnemonicParsing="false" onAction="#button8Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="8">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Button>
+                                    <Button fx:id="b9" layoutX="156.0" layoutY="21.0" mnemonicParsing="false" onAction="#button9Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="9">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                    </Button>
+                                    <Button layoutX="231.0" layoutY="21.0" mnemonicParsing="false" onAction="#devideaction" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: #FD7212; -fx-background-radius: 17;" text="/" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="1.0" green="0.4833333194255829" opacity="0.20000000298023224" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="231.0" layoutY="88.0" mnemonicParsing="false" onAction="#multipleaction" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: #FD7212; -fx-background-radius: 17;" text="X" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="1.0" green="0.4833333194255829" opacity="0.20000000298023224" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="231.0" layoutY="156.0" mnemonicParsing="false" onAction="#addaction" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: #FD7212; -fx-background-radius: 17;" text="+" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="1.0" green="0.4833333194255829" opacity="0.20000000298023224" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="231.0" layoutY="223.0" mnemonicParsing="false" onAction="#subtractaction" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: #FD7212; -fx-background-radius: 17;" text="-" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="1.0" green="0.4833333194255829" opacity="0.20000000298023224" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="15.0" layoutY="88.0" mnemonicParsing="false" onAction="#button4Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="4">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="85.0" layoutY="88.0" mnemonicParsing="false" onAction="#button5Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="5">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="154.0" layoutY="88.0" mnemonicParsing="false" onAction="#button6Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="6">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" onAction="#button1Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="1">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="84.0" layoutY="156.0" mnemonicParsing="false" onAction="#button2Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="2">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="153.0" layoutY="156.0" mnemonicParsing="false" onAction="#button3Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="3">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="153.0" layoutY="223.0" mnemonicParsing="false" onAction="#calculate" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: #FD7212; -fx-background-radius: 17;" text="=" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="1.0" green="0.4833333194255829" opacity="0.20000000298023224" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="15.0" layoutY="223.0" mnemonicParsing="false" onAction="#button0Clicked" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 15Px;" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color opacity="0.3015267252922058" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="83.0" layoutY="223.0" mnemonicParsing="false" onAction="#cleartextfield" prefHeight="56.0" prefWidth="60.0" style="-fx-background-color: #FD7212; -fx-background-radius: 17;" text="C" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow>
+                                             <color>
+                                                <Color red="1.0" green="0.4833333194255829" opacity="0.20000000298023224" />
+                                             </color>
+                                          </DropShadow>
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <TextField fx:id="outputtextfield" layoutX="30.0" layoutY="29.0" opacity="0.55" prefHeight="93.0" prefWidth="272.0" promptText="output here" style="-fx-border-radius: 11Px; -fx-background-radius: 11Px; -fx-background-color: lightgray;">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow>
+                                       <color>
+                                          <Color opacity="0.2328244298696518" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <Label fx:id="savednumbers" layoutX="35.0" layoutY="35.0" prefHeight="17.0" prefWidth="265.0" />
+                           </children>
+                        </AnchorPane>
+                        <TextArea fx:id="calculatetextarea" layoutX="23.0" layoutY="467.0" prefHeight="173.0" prefWidth="333.0" promptText="سجل العمليات الحسابية                                                          " style="-fx-background-color: white; -fx-background-radius: 11;" visible="false">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.3244274854660034" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextArea>
+                        <AnchorPane layoutX="14.0" layoutY="448.0" prefHeight="235.0" prefWidth="350.0" style="-fx-background-color: white; -fx-background-radius: 11;">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.30534350872039795" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <children>
+                              <ImageView fitHeight="200.0" fitWidth="158.0" layoutX="95.0" layoutY="18.0">
+                                 <image>
+                                    <Image url="@../../../image/7.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="tasbihNumberLabel" layoutX="128.0" layoutY="61.0" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="resetButtonInDigital" layoutX="201.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#resetDigitalButton" opacity="0.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 20px;" />
+                              <Button fx:id="clickbuttonInDigital" layoutX="148.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#clickonDigitalButton" opacity="0.0" prefHeight="56.0" prefWidth="55.0" style="-fx-background-radius: 20px;" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="397.0" layoutY="14.0" prefHeight="682.0" prefWidth="688.0" style="-fx-background-color: white; -fx-background-radius: 11Px;">
+                     <children>
+                        <TableView layoutX="34.0" layoutY="48.0" prefHeight="395.0" prefWidth="621.0" style="-fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 11;" visible="false">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C2" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="tableBookButton" layoutX="187.0" layoutY="586.0" mnemonicParsing="false" onAction="#booktable" prefHeight="44.0" prefWidth="314.0" style="-fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-color: none; -fx-border-radius: 11Px;" text="حجز الطاولة" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="1.0" green="0.43809524178504944" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="tablebooknotable" alignment="CENTER" layoutX="208.0" layoutY="525.0" onAction="#menuAmount" prefHeight="36.0" prefWidth="301.0" promptText="ادخل رقم الطاولة" style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" visible="false" />
+                        <TextField fx:id="tablrbookcustomerrid" alignment="CENTER" layoutX="208.0" layoutY="479.0" onAction="#menuAmount" prefHeight="36.0" prefWidth="301.0" promptText="ادخل رقم الطلب" style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" visible="false" />
+                        <TableView fx:id="tabletablepage1" layoutX="41.0" layoutY="63.0" prefHeight="365.0" prefWidth="614.0" style="-fx-background-color: white; -fx-border-radius: 11; -fx-border-color: lightgray;">
+                           <columns>
+                              <TableColumn fx:id="tableidc11" prefWidth="103.0" text="رقم الطاولة" />
+                              <TableColumn fx:id="tablecapacityc21" prefWidth="149.0" text="سعة الطاولة" />
+                              <TableColumn fx:id="tableavailbiltyc31" prefWidth="193.0" text="حالة الطاولة" />
+                              <TableColumn fx:id="customeridintableBook" prefWidth="167.0" text="رقم العميل" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="284.0" layoutY="16.0" text="ادارة حجز طاولة">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="chhosecustomerforbookcombobox" layoutX="183.0" layoutY="457.0" onAction="#displaycustomeridinBookcombobox" prefHeight="44.0" prefWidth="323.0" promptText="اختر العميل...." style="-fx-background-color: white; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <ComboBox fx:id="choosetableforbookcombobox" layoutX="183.0" layoutY="509.0" onAction="#displaytableidinBookcombobox" prefHeight="44.0" prefWidth="323.0" promptText="اختر الطاولة...." style="-fx-background-color: white; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                     </children>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.3969465494155884" />
+                           </color>
+                        </DropShadow>
+                     </effect></AnchorPane>
+               </children>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.36259540915489197" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="availableFormAnchorPane" layoutX="17.0" prefHeight="727.0" prefWidth="1105.0" style="-fx-background-color: white;" visible="false">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.41603052616119385" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <AnchorPane layoutX="700.0" layoutY="18.0" prefHeight="695.0" prefWidth="391.0" style="-fx-background-color: white; -fx-border-color: #E6E6E6; -fx-background-radius: 11Px; -fx-border-radius: 11Px;">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.0992366299033165" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="253.0" layoutY="66.0" prefHeight="21.0" prefWidth="109.0" text="الرقم التعريفي:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="productidInproductPage" alignment="CENTER_RIGHT" layoutX="50.0" layoutY="60.0" prefHeight="33.0" prefWidth="174.0" promptText="ادخل الرقم التعريفي" style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <Label alignment="CENTER_RIGHT" layoutX="265.0" layoutY="106.0" prefHeight="21.0" prefWidth="92.0" text="اسم المنتج:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="productNameInproductPage" alignment="CENTER_RIGHT" layoutX="50.0" layoutY="101.0" prefHeight="30.0" prefWidth="174.0" promptText="ادخل اسم الوجبة" style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <Label alignment="CENTER_RIGHT" layoutX="279.0" layoutY="145.0" prefHeight="21.0" prefWidth="77.0" text="النوع:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="productTypeComboBoxInproductPage" layoutX="50.0" layoutY="139.0" onAction="#availableFoodAndDrinTypekFormAnchorPane" prefHeight="33.0" prefWidth="174.0" promptText="اختر..." style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <Label alignment="CENTER_RIGHT" layoutX="263.0" layoutY="182.0" prefHeight="21.0" prefWidth="92.0" text="سعر الوجبة:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="productPriceInproductPage" alignment="CENTER_RIGHT" layoutX="50.0" layoutY="180.0" prefHeight="32.0" prefWidth="174.0" promptText="\$0.0" style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <Label alignment="CENTER_RIGHT" layoutX="263.0" layoutY="220.0" prefHeight="21.0" prefWidth="92.0" text="حالةالوجبة:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="productAvailableComboBoxInproductPage" layoutX="50.0" layoutY="218.0" onAction="#availableFoodAndDrinkFormAnchorPane" prefHeight="30.0" prefWidth="174.0" promptText="اختر..." style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <Label layoutX="148.0" layoutY="14.0" text="ادارة المخزن">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="productRemovebuttonInproductPage" layoutX="50.0" layoutY="583.0" mnemonicParsing="false" onAction="#availableFoodAndDrinkDelete" prefHeight="28.0" prefWidth="306.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;" text="حذف">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="productAddbuttonInproductPage" layoutX="50.0" layoutY="473.0" mnemonicParsing="false" onAction="#availableFoodAndDrinkAdd" prefHeight="21.0" prefWidth="306.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;" text="اضافة">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color green="1.0" blue="0.15000000596046448" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="productUpdatebuttonInproductPage" layoutX="50.0" layoutY="529.0" mnemonicParsing="false" onAction="#availableFoodAndDrinkUpdateAlltextFields" prefHeight="31.0" prefWidth="306.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;" text="تعديل">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color green="0.17142857611179352" blue="1.0" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="productClearbuttonInproductPage" layoutX="50.0" layoutY="634.0" mnemonicParsing="false" onAction="#availableClearallTextFileds" prefHeight="26.0" prefWidth="306.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;" text="تفريغ">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="1.0" green="0.9523809552192688" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER_RIGHT" layoutX="280.0" layoutY="262.0" prefHeight="21.0" prefWidth="77.0" text="المتاح:">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="productStockInproductPage1" alignment="CENTER_RIGHT" layoutX="50.0" layoutY="256.0" prefHeight="32.0" prefWidth="174.0" promptText="0" style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <AnchorPane layoutX="50.0" layoutY="293.0" prefHeight="163.0" prefWidth="174.0" style="-fx-background-radius: 11Px; -fx-background-color: #E6E6E6; -fx-border-radius: 11Px;">
+                           <children>
+                              <ImageView fx:id="imageviewProdutsavailable" fitHeight="150.0" fitWidth="150.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="importButton" layoutX="236.0" layoutY="341.0" mnemonicParsing="false" onAction="#importbuttonforProducts" prefHeight="44.0" prefWidth="121.0" style="-fx-background-color: #FD7212; -fx-background-radius: 11Px; -fx-border-color: none; -fx-border-radius: 11Px;" text="تحميل صورة" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.17175574600696564" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="26.0" layoutY="18.0" prefHeight="695.0" prefWidth="661.0" style="-fx-background-color: white; -fx-border-radius: 11Px; -fx-background-radius: 11Px;">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.347328245639801" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <TextField fx:id="productsearchInproductPage" alignment="CENTER_RIGHT" layoutX="63.0" layoutY="21.0" onKeyTyped="#availableFoodAndDrinkSearch" prefHeight="44.0" prefWidth="537.0" promptText="ابحث عن وجبة...." style="-fx-background-color: white; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;">
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.2862595319747925" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </TextField>
+                        <TableView fx:id="productTableViewInproductPage" layoutX="14.0" layoutY="81.0" onMouseClicked="#availableFoodAndDrinkSelect" prefHeight="607.0" prefWidth="640.0" style="-fx-background-color: #E6E6E6; -fx-border-radius: 20Px; -fx-background-radius: 5Px; -fx-border-color: #E6E6E6;">
+                          <columns>
+                            <TableColumn fx:id="productidTableViewColumnsInproductPage" prefWidth="93.0" style="-fx-background-color: white;" text="الرقم التعريفى" />
+                            <TableColumn fx:id="productNameTableViewColumnsInproductPage" prefWidth="116.0" style="-fx-background-color: white;" text="الاسم" />
+                              <TableColumn fx:id="productTypeTableViewColumnsInproductPage" prefWidth="75.0" style="-fx-background-color: white;" text="النوع" />
+                              <TableColumn fx:id="productPriceTableViewColumnsInproductPage" prefWidth="62.0" style="-fx-background-color: white;" text="السعر" />
+                              <TableColumn fx:id="productAvailableTableViewColumnsInproductPage" prefWidth="112.0" style="-fx-background-color: white;" text="حالة الوجبة" />
+                              <TableColumn fx:id="productStockTableViewColumnsInproductPage1" prefWidth="66.0" style="-fx-background-color: white;" text="المتاح" />
+                              <TableColumn fx:id="productdateTableViewColumnsInproductPage11" prefWidth="127.0" style="-fx-background-color: white;" text="التاريخ" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="productDeleteallelementsbuttonInproductPage1" layoutX="10.0" layoutY="617.0" mnemonicParsing="false" onAction="#deleteallElementsbutton" prefHeight="40.0" prefWidth="537.0" style="-fx-background-color: red; -fx-background-radius: 11Px; -fx-border-color: none; -fx-border-radius: 11Px;" text="Remove All Elements" textFill="WHITE" visible="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="orderFormAnchorPane" layoutX="17.0" layoutY="5.0" prefHeight="718.0" prefWidth="1112.0" style="-fx-background-color: white; -fx-background-radius: 0px;" visible="false">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.3435114622116089" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <AnchorPane layoutX="546.0" layoutY="28.0" prefHeight="639.0" prefWidth="561.0" style="-fx-background-color: white; -fx-border-color: #E6E6E6; -fx-background-radius: 11Px; -fx-border-radius: 11Px;" visible="false">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.0992366299033165" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane layoutX="17.0" layoutY="21.0" prefHeight="682.0" prefWidth="695.0" style="-fx-background-color: white; -fx-border-radius: 11Px; -fx-background-radius: 11Px;">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.347328245639801" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <ScrollPane fx:id="orderscrollpane" layoutX="9.0" layoutY="10.0" prefHeight="663.0" prefWidth="673.0">
+                           <content>
+                              <GridPane fx:id="ordermenugridpane11" prefHeight="29.0" prefWidth="162.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="728.0" layoutY="21.0" prefHeight="682.0" prefWidth="370.0" style="-fx-background-color: white; -fx-background-radius: 11Px;">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.4083969295024872" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <Label fx:id="ordermanagementlabel" layoutX="115.0" layoutY="9.0" text="ادارة الطلبـــــــــــــــــات">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="orderRemoveButtonInOrderPage" layoutX="23.0" layoutY="522.0" mnemonicParsing="false" onAction="#orderRemoveButton" prefHeight="40.0" prefWidth="333.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;" text="حذف الطلب">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="orderPayButtonInOrderPage" layoutX="23.0" layoutY="462.0" mnemonicParsing="false" onAction="#OrderPayButton" prefHeight="40.0" prefWidth="333.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;" text="تاكيد الطلب">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color green="1.0" blue="0.3619047701358795" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="orderRecieteButtonInOrderPage" layoutX="23.0" layoutY="585.0" mnemonicParsing="false" onAction="#orderRecieptButton" prefHeight="40.0" prefWidth="333.0" style="-fx-background-color: white; -fx-background-radius: 11Px; -fx-border-color: #E6E6E6; -fx-border-radius: 11Px;" text="الايصال">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="1.0" green="0.43809524178504944" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="281.0" layoutY="354.0" text="نقدى:">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="orderAmountlInOrderPage" alignment="CENTER_RIGHT" layoutX="55.0" layoutY="349.0" onAction="#menuAmount" prefHeight="36.0" prefWidth="212.0" promptText="\$0.0" style="-fx-background-color: #E6E6E6; -fx-border-color: #E6E6E6; -fx-background-radius: 20Px; -fx-border-radius: 20Px;" />
+                        <Label layoutX="213.0" layoutY="314.0" text="اجمالى الفاتورة:">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="orderTotalLabelInOrderPage1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="58.0" layoutY="312.0" prefHeight="30.0" prefWidth="139.0" text="00000">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="230.0" layoutY="402.0" text="فرق الحساب:">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="orderchangeLabelInOrderPage11" alignment="CENTER_RIGHT" layoutX="52.0" layoutY="400.0" prefHeight="21.0" prefWidth="145.0" text="0.0">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="orderTableVirewInorderPage" layoutX="18.0" layoutY="41.0" prefHeight="247.0" prefWidth="333.0" style="-fx-background-color: #E6E6E6; -fx-border-radius: 20Px; -fx-background-radius: 5Px; -fx-border-color: #E6E6E6;">
+                           <columns>
+                              <TableColumn fx:id="orderProductNameTableViewInorderPage" prefWidth="91.0" style="-fx-background-color: white;" text="اسم المنتج" />
+                              <TableColumn fx:id="orderProductQuantityTableViewInorderPage" prefWidth="130.0" style="-fx-background-color: white;" text="الكمية" />
+                              <TableColumn fx:id="orderProductPriceTableViewInorderPage" prefWidth="110.0" style="-fx-background-color: white;" text="السعر" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tablemanagementpage2" layoutX="21.0" layoutY="10.0" prefHeight="718.0" prefWidth="1105.0" style="-fx-background-color: white; -fx-background-radius: 0px;" visible="false">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2633587718009949" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <AnchorPane layoutX="599.0" layoutY="14.0" prefHeight="685.0" prefWidth="488.0" style="-fx-background-color: white; -fx-background-radius: 11;">
+                     <children>
+                        <Button fx:id="buttontableadd" layoutX="33.0" layoutY="348.0" mnemonicParsing="false" onAction="#TableButtonAdd" prefHeight="56.0" prefWidth="383.0" style="-fx-background-radius: 25; -fx-background-color: white;" text="اضافة" textFill="#1a1c1b">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color green="1.0" blue="0.18333333730697632" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Button>
+                        <Button fx:id="buttontableupdate" layoutX="33.0" layoutY="424.0" mnemonicParsing="false" onAction="#TablesUpdateButton" prefHeight="56.0" prefWidth="383.0" style="-fx-background-radius: 25; -fx-background-color: white;" text="تعديل" textFill="#131212">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.07289999723434448" green="0.6257249712944031" blue="0.8100000023841858" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Button>
+                        <Button fx:id="buttontableremove" layoutX="33.0" layoutY="496.0" mnemonicParsing="false" onAction="#TableButtonDelete" prefHeight="56.0" prefWidth="383.0" style="-fx-background-radius: 25; -fx-background-color: white;" text="حذف" textFill="#1e1c1c">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Button>
+                        <TextField fx:id="textfeldtableid" layoutX="51.0" layoutY="92.0" prefHeight="40.0" prefWidth="247.0" style="-fx-background-radius: 25;" />
+                        <TextField fx:id="textfeldtablecapacity" layoutX="51.0" layoutY="154.0" prefHeight="40.0" prefWidth="247.0" style="-fx-background-radius: 25;" />
+                        <Button fx:id="buttontableclear" layoutX="33.0" layoutY="573.0" mnemonicParsing="false" onAction="#tableClearallTextFileds" prefHeight="56.0" prefWidth="383.0" style="-fx-background-radius: 25; -fx-background-color: white;" text="تفريغ" textFill="#181717">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.8984047770500183" green="0.9700000286102295" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Button>
+                        <Label fx:id="texttableid" alignment="CENTER_RIGHT" layoutX="325.0" layoutY="95.0" prefHeight="25.0" prefWidth="95.0" text="رقم الطاولة:">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="texttablecapacity" alignment="CENTER_RIGHT" layoutX="333.0" layoutY="155.0" prefHeight="31.0" prefWidth="79.0" text="الحجم:">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboboxtablechoose" layoutX="51.0" layoutY="221.0" onAction="#tableFoodAndDrinkFormAnchorPane" prefHeight="40.0" prefWidth="247.0" promptText="اختر..." style="-fx-background-radius: 25; -fx-background-color: white; -fx-border-color: lightgray; -fx-border-radius: 11;" />
+                        <Label fx:id="texttableCustomerType" alignment="CENTER_RIGHT" layoutX="298.0" layoutY="222.0" prefHeight="31.0" prefWidth="114.0" text="حالة الطاولة:">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="texttabletablemanagement" layoutX="175.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ادارة الطاولات" wrappingWidth="174.0">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.43893128633499146" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane layoutX="19.0" layoutY="14.0" prefHeight="685.0" prefWidth="561.0" style="-fx-background-color: white; -fx-background-radius: 11;">
+                     <children>
+                        <TableView fx:id="tabletablepage" layoutX="18.0" layoutY="18.0" prefHeight="654.0" prefWidth="527.0" style="-fx-background-color: white; -fx-border-radius: 11; -fx-border-color: lightgray;">
+                           <columns>
+                              <TableColumn fx:id="tableidc1" prefWidth="149.0" text="رقم الطاولة" />
+                              <TableColumn fx:id="tablecapacityc2" prefWidth="191.0" text="سعة الطاولة" />
+                              <TableColumn fx:id="tableavailbiltyc3" prefWidth="185.0" text="حالة الطاولة" />
+                           </columns>
+                        </TableView>
+                     </children>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.4656488597393036" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="menuImageAnchorPanepage" layoutX="40.0" layoutY="21.0" prefHeight="682.0" prefWidth="1091.0" style="-fx-background-color: white; -fx-background-radius: 11;" visible="false">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.46183204650878906" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <ImageView fx:id="menuImageView" fitHeight="607.0" fitWidth="1071.0" layoutX="18.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+                  <ImageView fitHeight="654.0" fitWidth="1080.0" layoutX="6.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../../../image/تصميم%20بدون%20عنوان.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="importButtonMenuIoicture" layoutX="384.0" layoutY="612.0" mnemonicParsing="false" onAction="#importbuttonforMenu" prefHeight="27.0" prefWidth="383.0" style="-fx-background-color: #FFCF00; -fx-background-radius: 11Px; -fx-border-color: none; -fx-border-radius: 11Px;" text="تحميل صورة المنيو" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.17175574600696564" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
